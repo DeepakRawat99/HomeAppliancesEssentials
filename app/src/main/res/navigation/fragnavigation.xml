@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragnavigation"
+    app:startDestination="@id/blankFragment">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.hae.haessentials.ui.Login"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_login_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.hae.haessentials.ui.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_blankFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.hae.haessentials.ui.OtpFragment"
+        android:label="OtpFragment" >
+        <action
+            android:id="@+id/action_otpFragment_to_onBoardingFormFrag"
+            app:destination="@id/onBoardingFormFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFormFrag"
+        android:name="com.hae.haessentials.ui.OnBoardingFormFrag"
+        android:label="OnBoardingFormFrag" >
+        <action
+            android:id="@+id/action_onBoardingFormFrag_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.hae.haessentials.ui.HomeFragment"
+        android:label="HomeFragment" />
+</navigation>

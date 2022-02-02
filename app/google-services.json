@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "414107917306",
+    "project_id": "ha-essentials",
+    "storage_bucket": "ha-essentials.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414107917306:android:6fe67dc745ed7216602243",
+        "android_client_info": {
+          "package_name": "com.hae.haessentials"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414107917306-jvbsie7j40mu5u8mob8khijs5l3qe5ga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hae.haessentials",
+            "certificate_hash": "e82b620767869ac5f6d9bf5337e08c5a83904e0c"
+          }
+        },
+        {
+          "client_id": "414107917306-9ml1v8ck9pij80nfj1g2p99fn0hij646.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq7ZS6Egzn_AOIJReln5qAmjwQ2jOM0lU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414107917306-9ml1v8ck9pij80nfj1g2p99fn0hij646.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

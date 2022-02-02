@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+     <data>
+         <variable
+             name="viewModel"
+             type="com.hae.haessentials.ui.LoginViewModel" />
+     </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/lf_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/white"
+        tools:context=".ui.Login"
+        android:focusable="true">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lf_hellotv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/hello_there"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lf_entermobtv"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="@string/enter_your_mobile_number"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <com.hae.haessentials.utility.HAECustomTextInputLayout
+            android:id="@+id/lf_tillogin"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lf_etmobile"
+                style="@style/editexttheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lf_entermobtv"
+                android:afterTextChanged="@{viewModel::onEnterMobile}"
+                android:autofillHints="no"
+                android:background="@drawable/editext_bg_rounded_corner"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="12dp"
+                android:textSize="18sp" />
+        </com.hae.haessentials.utility.HAECustomTextInputLayout>
+
+        <com.hae.haessentials.utility.HAECustomTextInputLayout
+            android:id="@+id/lf_tilotp"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lf_etotp1"
+                    style="@style/editexttheme"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:autofillHints="no"
+                    android:background="@drawable/editext_bg_rounded_corner"
+                    android:hint="*"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lf_etotp2"
+                    style="@style/editexttheme"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:autofillHints="no"
+                    android:background="@drawable/editext_bg_rounded_corner"
+                    android:hint="*"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lf_etotp3"
+                    style="@style/editexttheme"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:autofillHints="no"
+                    android:background="@drawable/editext_bg_rounded_corner"
+                    android:hint="*"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lf_etotp4"
+                    style="@style/editexttheme"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:autofillHints="no"
+                    android:background="@drawable/editext_bg_rounded_corner"
+                    android:hint="*"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </com.hae.haessentials.utility.HAECustomTextInputLayout>
+
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/lf_login"
+        style="@style/buttontheme"
+        android:layout_alignParentBottom="true"
+        android:onClick="@{viewModel::onClick}"
+        android:layout_margin="20dp"
+        android:textColor="@color/white"/>
+</RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

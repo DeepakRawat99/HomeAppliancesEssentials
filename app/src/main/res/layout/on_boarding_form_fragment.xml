@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.hae.haessentials.ui.OnBoardingFormViewModel" />
+    </data>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.OnBoardingFormFrag">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/knowing_you_better"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/obff_firstnametv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/your_firstname"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.hae.haessentials.utility.HAECustomTextInputLayout
+        android:id="@+id/obfftil_firstname"
+        style="@style/editexttheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/obff_firstnameet"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:background="@drawable/editext_bg_rounded_corner"
+           android:imeOptions="actionNext"
+            android:afterTextChanged="@{viewModel::onEnteradd}"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="18sp" />
+    </com.hae.haessentials.utility.HAECustomTextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/obff_lastnametv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/your_lastname"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.hae.haessentials.utility.HAECustomTextInputLayout
+        android:id="@+id/obfftil_lastname"
+        style="@style/editexttheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/obff_lastnameet"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:background="@drawable/editext_bg_rounded_corner"
+            android:imeOptions="actionNext"
+            android:afterTextChanged="@{viewModel::onEnteradd}"
+            android:inputType="text"
+            android:digits="@string/a_to_z"
+            android:padding="12dp"
+            android:textSize="18sp" />
+    </com.hae.haessentials.utility.HAECustomTextInputLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/obff_housetv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/house_no"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.hae.haessentials.utility.HAECustomTextInputLayout
+        android:id="@+id/obfftil_house"
+        style="@style/editexttheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/obff_houseet"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:background="@drawable/editext_bg_rounded_corner"
+            android:imeOptions="actionNext"
+            android:afterTextChanged="@{viewModel::onEnteradd}"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="18sp" />
+    </com.hae.haessentials.utility.HAECustomTextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/obff_localitytv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/locality"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.hae.haessentials.utility.HAECustomTextInputLayout
+        android:id="@+id/obfftil_locality"
+        style="@style/editexttheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/obff_localityet"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:background="@drawable/editext_bg_rounded_corner"
+            android:imeOptions="actionNext"
+            android:afterTextChanged="@{viewModel::onEnteradd}"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="18sp" />
+    </com.hae.haessentials.utility.HAECustomTextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/obff_landmarktv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/landmark"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.hae.haessentials.utility.HAECustomTextInputLayout
+        android:id="@+id/obfftil_landmark"
+        style="@style/editexttheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/obff_landmarket"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:background="@drawable/editext_bg_rounded_corner"
+            android:imeOptions="actionNext"
+            android:afterTextChanged="@{viewModel::onEnteradd}"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="18sp" />
+    </com.hae.haessentials.utility.HAECustomTextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/obff_pincodetv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/pincode"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.hae.haessentials.utility.HAECustomTextInputLayout
+        android:id="@+id/obfftil_pincode"
+        style="@style/editexttheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/obff_pincodeet"
+            style="@style/editexttheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:background="@drawable/editext_bg_rounded_corner"
+            android:imeOptions="actionDone"
+            android:afterTextChanged="@{viewModel::onEnteradd}"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="12dp"
+            android:textSize="18sp" />
+    </com.hae.haessentials.utility.HAECustomTextInputLayout>
+    <TextView
+        android:layout_gravity="bottom"
+        android:id="@+id/obff_continue"
+        style="@style/buttontheme"
+        android:layout_marginTop="40dp"
+        android:onClick="@{viewModel::onClick}"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:textColor="@color/white"/>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</layout>
