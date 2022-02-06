@@ -4,9 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ViewDataBinding
+import android.widget.ImageView
 import androidx.lifecycle.ViewModel
 import com.hae.haessentials.R
 import com.hae.haessentials.base.BaseActivity
@@ -20,8 +18,7 @@ import com.hae.haessentials.viewmodels.SplashViewModel
 * */
 class SplashActivity : BaseActivity() {
     private var activityvisible = true
-    private lateinit var textview: TextView
-    private lateinit var textview1: TextView
+    private lateinit var imageView: ImageView
     override fun getLayoutId(): Int {
         return R.layout.activity_splash
     }
@@ -35,15 +32,13 @@ class SplashActivity : BaseActivity() {
         setContentView(R.layout.activity_splash)
         UserSharedPref.init(applicationContext)
        // setStatusBarColor(R.color.darker_grey_3E3D3D)
-            textview = findViewById(R.id.splash_ha)
-            textview1 = findViewById(R.id.splash_essentials)
+            imageView = findViewById(R.id.splash_ha)
             goToNextActivity()
     }
 
     private fun goToNextActivity() {
         val fadeanim = AnimationUtils.loadAnimation(applicationContext, R.anim.fade_in)
-        textview.startAnimation(fadeanim)
-        textview1.startAnimation(fadeanim)
+        imageView.startAnimation(fadeanim)
         fadeanim.setAnimationListener(object : Animation.AnimationListener{
             override fun onAnimationStart(p0: Animation?) {
 
@@ -75,8 +70,7 @@ class SplashActivity : BaseActivity() {
     //when user leaves
     override fun onUserLeaveHint() {
         super.onUserLeaveHint()
-        textview.animate().cancel()
-        textview1.animate().cancel()
+        imageView.animate().cancel()
         activityvisible = false
     }
 

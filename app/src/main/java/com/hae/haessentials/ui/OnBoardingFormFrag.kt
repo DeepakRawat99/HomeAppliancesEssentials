@@ -70,6 +70,7 @@ class OnBoardingFormFrag : BaseFragment() {
                 else if(!servicePinCode(pincode)) binding.obfftilPincode.error = getString(R.string.serviceable_text)
                 else {
                     //if everything seems to be fine move to next frag
+                        UserSharedPref.setFirstName(firstName)
                     replaceFragment(R.id.homeFragment,null)
 
                 }

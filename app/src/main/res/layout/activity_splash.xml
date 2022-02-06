@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
             name="viewModel"
             type="com.hae.haessentials.viewmodels.SplashViewModel" />
     </data>
 <LinearLayout
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -17,28 +17,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <ImageView
         android:id="@+id/splash_ha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/ha"
-        android:textColor="@color/white"
-        android:textSize="50sp" />
-
-    <TextView
-        android:id="@+id/splash_essentials"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/splash_ha"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/essentials"
-        android:layout_marginTop="-20dp"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
-
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_hae_white" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

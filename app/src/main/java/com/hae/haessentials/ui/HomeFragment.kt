@@ -11,6 +11,7 @@ import com.hae.haessentials.R
 import com.hae.haessentials.base.BaseFragment
 import com.hae.haessentials.databinding.HomeFragmentBinding
 import com.hae.haessentials.databinding.OnBoardingFormFragmentBinding
+import com.hae.haessentials.utility.UserSharedPref
 
 class HomeFragment : BaseFragment() {
 
@@ -48,8 +49,8 @@ class HomeFragment : BaseFragment() {
         binding = getBinding() as HomeFragmentBinding
         viewModel = getViewModel() as HomeViewModel
         binding.viewModel = viewModel
-
+        showBottomBar(true)
+        binding.hfUsername.text = getString(R.string.hello_user, UserSharedPref.getFirstName())
     }
-
 
 }

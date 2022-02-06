@@ -3,6 +3,10 @@ package com.hae.haessentials.utility
 import android.util.Log
 import androidx.core.text.isDigitsOnly
 import java.lang.Exception
+
+const val VERIFICATION_ID = "verification_id"
+const val TOKEN = "token"
+const val MOBILE_NUMBER = "mobile_number"
 fun validMobileNumber(number:String?):Boolean{
     return try {
             !number.isNullOrEmpty() && number.length ==10 && number.isDigitsOnly()

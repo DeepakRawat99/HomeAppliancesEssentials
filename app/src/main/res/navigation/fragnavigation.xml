@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_blankFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_blankFragment_to_onBoardingFormFrag"
+            app:destination="@id/onBoardingFormFrag" />
     </fragment>
     <fragment
         android:id="@+id/otpFragment"

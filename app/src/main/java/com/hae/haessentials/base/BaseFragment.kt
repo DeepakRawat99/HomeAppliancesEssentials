@@ -1,17 +1,24 @@
 package com.hae.haessentials.base
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.hae.haessentials.ui.MainActivity
+import androidx.core.content.ContextCompat.getSystemService
+
+
+
 
 abstract class BaseFragment: Fragment() {
     private lateinit var binding: ViewDataBinding
@@ -45,6 +52,7 @@ abstract class BaseFragment: Fragment() {
         }
         return binding.root
     }
+
 //attaching activity context
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -70,6 +78,13 @@ abstract class BaseFragment: Fragment() {
     }
     protected fun showToast(message:String, context: Context){
         Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
+    }
+    protected fun hideKeyboard(activity: Activity){
+        val imm: InputMethodManager? = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
+        imm?.hideSoftInputFromWindow(activity.currentFocus?.windowToken, 0)
+    }
+    protected fun showBottomBar(boolean: Boolean){
+        mainActivity?.showBottomBar(boolean)
     }
 
     override fun onResume() {

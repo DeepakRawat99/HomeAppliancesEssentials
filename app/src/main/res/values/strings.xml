@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HomeAppliancesEssentials</string>
+    <string name="app_name">HA Essentials</string>
     <string name="essentials">Essentials</string>
     <string name="ha">HA</string>
     <string name="powered_by">"Powered by</string>
@@ -26,6 +26,12 @@
     <string name="valid_pincode">Enter a valid Pin Code</string>
     <string name="serviceable_text">We are not serviceable at this Pin Code</string>
     <string name="serviceable_text_login">We are currently serviceable at these pin codes only</string>
-    <string name="hello_user">Hello, \n<b>Deepak</b></string>
-    <string name="search">Search here...</string>
+    <string name="hello_user">Hello, <b>%s</b></string>
+    <string name="search">Search here…</string>
+    <string name="resend_otp">Resend Otp</string>
+    <string name="resend_otp_in">Resend otp in : %s</string>
+    <string name="home">home</string>
+    <string name="account">account</string>
+    <string name="cart">cart</string>
+    <string name="order">orders</string>
 </resources>

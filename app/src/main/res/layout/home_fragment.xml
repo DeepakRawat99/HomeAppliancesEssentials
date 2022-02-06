@@ -31,16 +31,17 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/hf_username"
-            android:layout_above="@+id/hf_searchbar"
-            android:fontFamily="@font/poppins_medium"
-            android:layout_marginBottom="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:text="@string/hello_user"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hf_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/hf_searchbar"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/hello_user"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"

@@ -19,6 +19,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/lf_headerIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_hae" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,6 +37,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        android:layout_below="@+id/lf_headerIcon"
         android:orientation="vertical">
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/lf_hellotv"
@@ -79,8 +91,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -88,7 +98,7 @@
                     style="@style/editexttheme"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="10dp"
                     android:autofillHints="no"
                     android:background="@drawable/editext_bg_rounded_corner"
                     android:hint="*"
@@ -104,7 +114,7 @@
                     style="@style/editexttheme"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="10dp"
                     android:autofillHints="no"
                     android:background="@drawable/editext_bg_rounded_corner"
                     android:hint="*"
@@ -120,7 +130,7 @@
                     style="@style/editexttheme"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="10dp"
                     android:autofillHints="no"
                     android:background="@drawable/editext_bg_rounded_corner"
                     android:hint="*"
@@ -146,19 +156,61 @@
                     android:padding="12dp"
                     android:textAlignment="center"
                     android:textSize="18sp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lf_etotp5"
+                    style="@style/editexttheme"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:autofillHints="no"
+                    android:background="@drawable/editext_bg_rounded_corner"
+                    android:hint="*"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lf_etotp6"
+                    style="@style/editexttheme"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="no"
+                    android:background="@drawable/editext_bg_rounded_corner"
+                    android:hint="*"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
             </LinearLayout>
         </com.hae.haessentials.utility.HAECustomTextInputLayout>
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lf_resend"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textSize="11sp"
+            android:text="resend"
+            android:clickable="false"
+            android:textColor="#2196F3"/>
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/lf_login"
         style="@style/buttontheme"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:onClick="@{viewModel::onClick}"
-        android:layout_margin="20dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 

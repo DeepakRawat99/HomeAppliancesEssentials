@@ -22,13 +22,132 @@
         android:visibility="gone"
         android:id="@+id/progressBar"
         />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/main_frag_view"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
+        android:layout_above="@+id/bottombar"
         app:navGraph="@navigation/fragnavigation" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/bottombar"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/lbn_home">
+            <View
+                android:layout_height="5sp"
+                android:layout_width="42dp"
+                android:id="@+id/view_home"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/hae_home"
+                android:layout_gravity="center"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:textSize="11sp"
+                android:id="@+id/bt_nav_home"
+                android:textColor="@color/darker_grey_3E3D3D"
+                android:layout_height="wrap_content"
+                android:text="@string/home"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/lbn_orders">
+            <View
+                android:layout_height="5sp"
+                android:layout_width="42dp"
+                android:id="@+id/view_order"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/hae_order"
+                android:layout_gravity="center"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:textSize="11sp"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_nav_order"
+                android:textColor="@color/darker_grey_3E3D3D"
+                android:text="@string/order"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/lbn_cart">
+            <View
+                android:layout_height="5sp"
+                android:layout_width="42dp"
+                android:id="@+id/view_cart"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/hae_cart"
+                android:layout_gravity="center"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:textSize="11sp"
+                android:textColor="@color/darker_grey_3E3D3D"
+                android:id="@+id/bt_nav_cart"
+                android:layout_height="wrap_content"
+                android:text="@string/cart"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/lbn_user">
+            <View
+                android:layout_height="5sp"
+                android:layout_width="42dp"
+                android:id="@+id/view_user"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/hae_user"
+                android:layout_gravity="center"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:textSize="11sp"
+                android:textColor="@color/darker_grey_3E3D3D"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_nav_user"
+                android:text="@string/account"/>
+        </LinearLayout>
+    </LinearLayout>
+
 </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
