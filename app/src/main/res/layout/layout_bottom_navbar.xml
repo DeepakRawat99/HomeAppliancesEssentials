@@ -1,110 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="5dp"
+    android:padding="15dp"
+    android:id="@+id/item_layout"
     android:background="@color/white"
-    android:orientation="horizontal">
-<LinearLayout
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:id="@+id/lbn_home">
-<View
-    android:layout_height="5sp"
-    android:layout_width="42dp"
-    android:id="@+id/view_home"/>
+    android:orientation="vertical">
     <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/hae_home"
-        android:layout_gravity="center"/>
+        android:id="@+id/item_img"
+        />
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:textSize="11sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/home"/>
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:id="@+id/lbn_orders">
-        <View
-            android:layout_height="5sp"
-            android:layout_width="42dp"
-            android:id="@+id/view_order"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="5dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/hae_order"
-            android:layout_gravity="center"/>
-        <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:textSize="11sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_medium"
+        android:id="@+id/item_name"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/order"/>
-    </LinearLayout>
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="5dp"
+        android:id="@+id/item_price"/>
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:id="@+id/lbn_cart">
-        <View
-            android:layout_height="5sp"
-            android:layout_width="42dp"
-            android:id="@+id/view_cart"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="5dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/hae_cart"
-            android:layout_gravity="center"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
-            android:textSize="11sp"
             android:layout_height="wrap_content"
-            android:text="@string/cart"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:id="@+id/lbn_user">
-        <View
-            android:layout_height="5sp"
-            android:layout_width="42dp"
-            android:id="@+id/view_user"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="5dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/hae_user"
-            android:layout_gravity="center"/>
+            android:fontFamily="@font/poppins"
+            android:textSize="14sp"
+            android:padding="5dp"
+            android:textColor="@color/darker_grey_3E3D3D"
+            android:text="@string/quantity"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
-            android:textSize="11sp"
-            android:layout_height="wrap_content"
-            android:text="@string/account"/>
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="1"
+            android:background="@drawable/cardview_rounded_corner"
+            android:layout_marginStart="5dp"
+            android:id="@+id/item_count"/>
     </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/buttontheme"
+        android:id="@+id/il_add_to_cart"
+        android:layout_marginTop="20dp"
+        android:text="@string/add_to_Cart"
+        />
+
 </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_below="@+id/item_layout"
+        />
+    </RelativeLayout>
 </layout>

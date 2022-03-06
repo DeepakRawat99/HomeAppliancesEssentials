@@ -48,5 +48,24 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.hae.haessentials.ui.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.hae.haessentials.ui.OrdersFragment"
+        android:label="OrdersFragment" >
+        <action
+            android:id="@+id/action_ordersFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.hae.haessentials.ui.CartFragment"
+        android:label="CartFragment" />
 </navigation>

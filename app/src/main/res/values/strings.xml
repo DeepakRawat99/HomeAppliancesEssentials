@@ -34,4 +34,9 @@
     <string name="account">account</string>
     <string name="cart">cart</string>
     <string name="order">orders</string>
+    <string name="items_in_cart">Items in your cart</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_to_Cart">add to cart</string>
+    <string name="quantity">Quantity : </string>
+    <string name="buy_now">Buy Now</string>
 </resources>

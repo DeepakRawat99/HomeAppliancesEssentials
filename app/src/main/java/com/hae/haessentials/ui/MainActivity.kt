@@ -22,6 +22,12 @@ import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 import com.hae.haessentials.R
 import com.hae.haessentials.base.BaseActivity
 import com.hae.haessentials.databinding.ActivityMainBinding
@@ -65,6 +71,21 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             replaceFragment(R.id.onBoardingFormFrag,null)
         }
         else {
+           /* val databse = Firebase.database("https://ha-essentials-default-rtdb.asia-southeast1.firebasedatabase.app")
+            val pincodes = databse.getReference("pincodes")
+            pincodes.addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val value = snapshot.getValue<Any>()
+                    Log.d("firebase value", "Value is: $value")
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.w("firebaseerror", "Failed to read value.", error.toException())
+                }
+
+            })*/
+            binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
+            binding.btNavHome.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
             replaceFragment(R.id.homeFragment,null)
             /*Log.d("-----Firebase", FirebaseDataLinker.getString(FirebaseDataLinker.ENCRYPTION_KEY))
             Toast.makeText(this, UserSharedPref.getMobileNumber().toString(),Toast.LENGTH_SHORT).show()*/
@@ -92,7 +113,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 supportFragmentManager.fragments[index] is OnBoardingFormFrag ||
                 supportFragmentManager.fragments[index] is HomeFragment ||
                 supportFragmentManager.fragments[index] is Login
-
                     ){
                 finish()
                 return
@@ -125,23 +145,27 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.viewOrder.setBackgroundResource(0)
         binding.viewCart.setBackgroundResource(0)
         binding.viewUser.setBackgroundResource(0)
-//setting ither views text color to normal
+//setting other views text color to normal
         binding.btNavHome.setTextColor(ContextCompat.getColor(this,R.color.darker_grey_3E3D3D))
         binding.btNavOrder.setTextColor(ContextCompat.getColor(this,R.color.darker_grey_3E3D3D))
         binding.btNavCart.setTextColor(ContextCompat.getColor(this,R.color.darker_grey_3E3D3D))
         binding.btNavUser.setTextColor(ContextCompat.getColor(this,R.color.darker_grey_3E3D3D))
+       // if(p0)
         when(p0?.id){
             R.id.lbn_home->{
                 binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
                 binding.btNavHome.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
+                replaceFragment(R.id.homeFragment,null)
             }
             R.id.lbn_orders->{
                 binding.viewOrder.setBackgroundResource(R.drawable.bg_header_home)
                 binding.btNavOrder.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
+                replaceFragment(R.id.ordersFragment,null)
             }
             R.id.lbn_cart->{
                 binding.viewCart.setBackgroundResource(R.drawable.bg_header_home)
                 binding.btNavCart.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
+                replaceFragment(R.id.cartFragment,null)
             }
             R.id.lbn_user->{
                 binding.viewUser.setBackgroundResource(R.drawable.bg_header_home)

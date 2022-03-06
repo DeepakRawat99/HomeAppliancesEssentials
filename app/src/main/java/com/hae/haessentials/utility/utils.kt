@@ -7,6 +7,21 @@ import java.lang.Exception
 const val VERIFICATION_ID = "verification_id"
 const val TOKEN = "token"
 const val MOBILE_NUMBER = "mobile_number"
+
+const val ITEM_JSON = "{\n" +
+        "\t\"items\": [{\n" +
+        "\t\t\t\"item_name\": \"surf\",\n" +
+        "\t\t\t\"item_desc\": \"this is item description\",\n" +
+        "\t\t\t\"item_price\": 200\n" +
+        "\t\t},\n" +
+        "\t\t{\n" +
+        "\t\t\t\"item_name\": \"surf\",\n" +
+        "\t\t\t\"item_desc\": \"this is item description\",\n" +
+        "\t\t\t\"item_price\": 200\n" +
+        "\t\t}\n" +
+        "\t]\n" +
+        "}"
+const val PINCODE_JSON = ""
 fun validMobileNumber(number:String?):Boolean{
     return try {
             !number.isNullOrEmpty() && number.length ==10 && number.isDigitsOnly()

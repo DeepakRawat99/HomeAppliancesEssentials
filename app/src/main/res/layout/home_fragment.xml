@@ -1,109 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
             type="com.hae.haessentials.ui.HomeViewModel" />
     </data>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/grey_C8CCD5"
-    tools:context=".ui.HomeFragment"
-    >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/appbarlayout"
-        android:background="@android:color/transparent"
-        android:fitsSystemWindows="true">
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        <!--<androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/hf_searchbar"
+            style="@style/editexttheme"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
-            android:padding="30dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/hf_username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_above="@+id/hf_searchbar"
-                    android:layout_marginBottom="20dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/hello_user"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/hf_searchbar"
-                style="@style/editexttheme"
-                android:background="@drawable/editext_bg_rounded_corner"
-                android:imeOptions="actionSearch"
-                android:inputType="text"
-                android:layout_alignParentBottom="true"
-                android:padding="10dp"
-                android:hint="@string/search"
-                android:drawablePadding="5dp"
-                android:drawableEnd="@drawable/search_icon_black"
-                android:textSize="18sp"/>
-            </RelativeLayout>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appbarlayout"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/editext_bg_rounded_corner"
+            android:drawableEnd="@drawable/search_icon_black"
+            android:drawablePadding="5dp"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="18sp" />-->
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/appbarlayout"
             android:clickable="true"
+            android:overScrollMode="never"
             android:focusable="true">
-
-            <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hf_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:text="This is an association football club formed in 1983, based in the town of Dover, Kent, England. In the 1989–90 season Dover
-    Athletic won the Southern League championship, but failed to gain promotion to the Football Conference as the club's ground did not meet
-    the required standard. Three seasons later the team won the title again and this time gained promotion to the Conference, where they spent
-    nine seasons before being relegated. The club was transferred to the Isthmian League Premier Division in 2004, but another poor season led
-    the club to a further relegation. After three seasons in the Isthmian League Division One South, the club won the championship and promotion
-    back to the Premier Division, and the following season won another championship and promotion to Conference South. In the 2013–14 season,
-    Dover defeated Ebbsfleet United to return to the Conference Premier after a twelve-year absence. Nicknamed the Whites for their white shirts,
-    they have played at the Crabble Athletic Ground since the club's formation. Their best performance in the FA Cup was reaching the third
-    round proper in both the 2010–11 and 2014–15 seasons. (Full article...)
-    Recently featured: Kalki Koechlin Rogue River (Oregon) Operation Ironside
-    Archive By email More featured articles...
-    his time gained promotion to the Conference, where they spent
-    nine seasons before being relegated. The club was transferred to the Isthmian League Premier Division in 2004, but another poor season led
-    the club to a further relegation. After three seasons in the Isthmian League Division One South, the club won the championship and promotion
-    back to the Premier Division, and the following season won another championship and promotion to Conference South. In the 2013–14 season,
-    Dover defeated Ebbsfleet United to return to the Conference Premier after a twelve-year absence. Nicknamed the Whites for their white shirts,
-    they have played at the Crabble Athletic Ground since the club's formation. Their best performance in the FA Cup was reaching the third
-    round proper in both the 2010–11 and 2014–15 seasons. (Full article...)
-This is an association football club formed in 1983, based in the town of Dover, Kent, England. In the 1989–90 season Dover
-    Athletic won the Southern League championship, but failed to gain promotion to the Football Conference as the club's ground did not meet
-    the required standard. Three seasons later the team won the title again and this time gained promotion to the Conference, where they spent
-    nine seasons before being relegated. The club was transferred to the Isthmian League Premier Division in 2004, but another poor season led
-    the club to a further relegation. After three seasons in the Isthmian League Division One South, the club won the championship and promotion
-    back to the Premier Division, and the following season won another championship and promotion to Conference South. In the 2013–14 season,
-    Dover defeated Ebbsfleet United to return to the Conference Premier after a twelve-year absence. Nicknamed the Whites for their white shirts,
-    they have played at the Crabble Athletic Ground since the club's formation. Their best performance in the FA Cup was reaching the third
-    round proper in both the 2010–11 and 2014–15 seasons. (Full article...)
-    Recently featured: Kalki Koechlin Rogue River (Oregon) Operation Ironside
-    Archive By email More featured articles..." />
-
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/hello_user"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_item_list"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:overScrollMode="never"
+                android:layout_height="match_parent" />
+            </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
