@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\release\\hae.jks')
+            storePassword 'Hae123'
+            keyAlias 'key0'
+            keyPassword 'Hae123'
+        }
+    }
     compileSdk 31
 
     defaultConfig {
@@ -21,6 +29,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     buildFeatures{

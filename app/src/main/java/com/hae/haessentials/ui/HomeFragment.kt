@@ -73,12 +73,12 @@ class HomeFragment : BaseFragment() {
         binding.hfUsername.text = getString(R.string.hello_user, UserSharedPref.getFirstName())
 
 
-        val itemJson = FirebaseDataLinker.getString(FirebaseDataLinker.ITEM_DETAILS)
-        val items: JSONArray = if(itemJson.isEmpty())
+        //val itemJson = FirebaseDataLinker.getString(FirebaseDataLinker.ITEM_DETAILS)
+        val items: JSONArray = //if(itemJson.isEmpty())
             JSONObject(ITEM_JSON).getJSONArray("items")
-        else
+        /*else
             JSONObject(itemJson).getJSONArray("items")
-
+*/
         for(i in 0 until items.length()){
             //val itemMap = HashMap<String,String>()
             //cartItems.itemId = items.getJSONObject(i).getString("item_id")
