@@ -80,7 +80,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         }
         else {
             val database = Firebase.database(FirebaseDataLinker.FIREBASE_DB).reference
-            val users = database.child(USER_DETAIL)
+            val users = database.child(USER_DETAIL).child(UserSharedPref.getUserUniqueId().toString())
             if(!CheckNumberNull(UserSharedPref.getUserUniqueId())){
                 logout()
                 return
@@ -88,16 +88,18 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             users.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if(snapshot.exists()){
-                        for(i in snapshot.children){
-                            if(i.child(UserSharedPref.getUserUniqueId().toString()).exists()){
+                        //for(i in snapshot.children){
+                            if(snapshot.exists()){
                                 userExist = true
+                                val name = snapshot.child("fullName").getValue<String>()!!.split(" ")
+                                UserSharedPref.setFirstName(name[0])
                                 binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
                                 binding.btNavHome.setTextColor(ContextCompat.getColor(this@MainActivity,R.color.green_186049))
                                 replaceFragment(R.id.homeFragment,null)
-                                break
-                            }
-                        }
-                        if(!userExist){
+                             /*   break
+                            }*/
+                        }else/*
+                        if(!userExist)*/{
                             replaceFragment(R.id.onBoardingFormFrag,null)
                         }
                     }else {
@@ -126,23 +128,20 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 //on back pressed method to close app from fragments from where going back is not needed
     override fun onBackPressed() {
-        if(supportFragmentManager.fragments.size>0){
-            val index= supportFragmentManager.fragments.size - 1
-            if(
-                supportFragmentManager.fragments[index] is BlankFragment ||
-                supportFragmentManager.fragments[index] is OnBoardingFormFrag ||
-                supportFragmentManager.fragments[index] is HomeFragment ||
-                supportFragmentManager.fragments[index] is Login
-                    ){
-                finish()
-                return
-            }else super.onBackPressed()
-        }
-        else if (supportFragmentManager.fragments.size==0) {
+
+    when(navController.currentDestination?.id){
+        R.id.login, R.id.onBoardingFormFrag,R.id.homeFragment,R.id.blankFragment ->{
             finish()
-            return
         }
-        super.onBackPressed()
+        R.id.otpFragment ->{
+            super.onBackPressed()
+        }
+        else->{
+            binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
+            binding.btNavHome.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
+            replaceFragment(R.id.homeFragment,null)
+        }
+    }
     }
     fun showLoading(){
         binding.progressBar.visibility = View.VISIBLE

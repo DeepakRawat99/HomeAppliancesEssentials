@@ -105,7 +105,15 @@ const val ITEM_JSON = "{\n" +
         "\t]\n" +
         "\n" +
         "}"
-const val PINCODE_JSON = ""
+val PINCODE_JSON = arrayOf("110010",
+    "110045",
+    "110046",
+    "110077",
+    "110043",
+    "110058",
+    "110059",
+    "110027",
+    "110018")
 fun validMobileNumber(number:String?):Boolean{
     return try {
             !number.isNullOrEmpty() && number.length ==10 && number.isDigitsOnly()
@@ -135,7 +143,11 @@ fun validPinCode(text:String):Boolean{
     return !(text.isEmpty() || text.length< 6)
 }
 fun servicePinCode(text:String):Boolean{
-    return true
+    for(i in PINCODE_JSON){
+        if(text.equals(i))
+            return true
+    }
+    return false
 }
 
 fun openPhone(number:String,context: Context){

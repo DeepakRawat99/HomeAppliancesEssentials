@@ -189,6 +189,11 @@
             </LinearLayout>
         </com.hae.haessentials.utility.HAECustomTextInputLayout>
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/delhi_note"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lf_resend"

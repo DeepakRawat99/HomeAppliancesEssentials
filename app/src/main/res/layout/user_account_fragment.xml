@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="@string/mobile"
+                    android:text="@string/mobilet"
                     android:paddingStart="10dp"
                     android:drawablePadding="5dp"
                     android:textSize="16sp"

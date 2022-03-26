@@ -56,7 +56,7 @@ class AccountsFragment: BaseFragment() {
         binding = getBinding() as UserAccountFragmentBinding
         viewModel = getViewModel() as AccountsViewModel
         user = Firebase.database(FirebaseDataLinker.FIREBASE_DB).reference
-            .child(FirebaseDataLinker.USER_ORDERS)
+            .child(FirebaseDataLinker.USER_DETAIL)
         if(!CheckNumberNull(UserSharedPref.getUserUniqueId())){
             showToast("Authentication Error",this.requireActivity())
             logout()

@@ -143,6 +143,7 @@ class OtpFragment:BaseFragment() {
         binding.lfResend.text = RESENDTIME.toString()
         timer = object : CountDownTimer(RESENDTIME.toLong()*1000, 1000){
             override fun onTick(p0: Long) {
+                if(isAdded)
                 binding.lfResend.text = getString(R.string.resend_otp_in,(p0/1000).toString())
             }
 

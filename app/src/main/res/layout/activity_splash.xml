@@ -25,13 +25,14 @@
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/ic_hae_white" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:text="@string/powered_by"
         android:fontFamily="@font/poppins"
+        android:text="@string/powered_by"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="13sp" />

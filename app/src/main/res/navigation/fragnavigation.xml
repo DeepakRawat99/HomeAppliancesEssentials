@@ -12,7 +12,7 @@
         tools:layout="@layout/login_fragment" >
         <action
             android:id="@+id/action_login_to_otpFragment"
-            app:destination="@id/otpFragment" />
+            app:destination="@id/otpFragment"/>
     </fragment>
     <fragment
         android:id="@+id/blankFragment"
@@ -32,10 +32,11 @@
     <fragment
         android:id="@+id/otpFragment"
         android:name="com.hae.haessentials.ui.OtpFragment"
-        android:label="OtpFragment" >
+        android:label="OtpFragment">
         <action
             android:id="@+id/action_otpFragment_to_onBoardingFormFrag"
-            app:destination="@id/onBoardingFormFrag" />
+            app:destination="@id/onBoardingFormFrag"
+            />
     </fragment>
     <fragment
         android:id="@+id/onBoardingFormFrag"

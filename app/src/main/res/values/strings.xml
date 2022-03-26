@@ -2,7 +2,7 @@
     <string name="app_name">HA Essentials</string>
     <string name="essentials">Essentials</string>
     <string name="ha">HA</string>
-    <string name="powered_by">"Powered by</string>
+    <string name="powered_by">"Powered by IFB</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">LOGIN</string>
@@ -62,10 +62,11 @@
     <string name="address">Address:-</string>
     <string name="office_address">RS ENTERPRISES, IFB authorised service centre,\nD-470, near Ramphal Chowk Dwarka sector-7\nNew Delhi - 110077</string>
     <string name="email">rsservices0802@gmail.com</string>
-    <string name="mobile">8057105575,</string>
+    <string name="mobile">8057105575</string>
     <string name="mobilet">8178480082</string>
     <string name="privacy">All products are under IFB. Only be sold by\nauthorized partners, and not to be sold outside.</string>
     <string name="logout">Logout</string>
     <string name="name">%s\n%s\n%s</string>
     <string name="logout_confirm">Are you sure you want to logout?</string>
+    <string name="delhi_note">Please note our service is only limited to some selected areas of Delhi currently.</string>
 </resources>
