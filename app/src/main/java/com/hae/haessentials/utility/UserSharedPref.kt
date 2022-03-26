@@ -10,6 +10,7 @@ object UserSharedPref {
     private const val LOGIN = "is_logged_in"
     private const val MOBILE_NUMBER = "mobile_number"
     private const val FIRST_NAME = "first_name"
+    private const val USER_UID = "user_uid"
 
 
     fun init(context: Context){
@@ -58,17 +59,23 @@ object UserSharedPref {
     fun setFirstName(value: String?){
         setString(FIRST_NAME, value)
     }
+    fun setUserUniqueId(value: String?){
+        setString(USER_UID, value)
+    }
+    fun getUserUniqueId(): String?{
+        return getString(USER_UID,null)
+    }
 
     private fun encrypt(value: String?): String? {
-         if(value.isNullOrBlank()) {
-            val key = FirebaseDataLinker.getString(FirebaseDataLinker.ENCRYPTION_KEY)
+         if(!value.isNullOrBlank()) {
+            val key = FirebaseDataLinker.ENCRYPTION_KEY
              return EncryptDecryptData().encryptUserData(value, key, "")
         }
         return null
     }
     private fun decrypt(value: String?): String? {
-         if(value.isNullOrBlank()) {
-            val key = FirebaseDataLinker.getString(FirebaseDataLinker.ENCRYPTION_KEY)
+         if(!value.isNullOrBlank()) {
+            val key = FirebaseDataLinker.ENCRYPTION_KEY
              return EncryptDecryptData().decryptUserData(value, key, "")
         }
         return null

@@ -181,11 +181,13 @@ class OtpFragment:BaseFragment() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
 
+                    UserSharedPref.setUserUniqueId(auth.currentUser?.uid.toString())
                     UserSharedPref.setMobile(mobileNumber)
                     UserSharedPref.setLogin(true)
                     timer?.cancel()
-                    replaceFragment(R.id.onBoardingFormFrag,null)
-                    val user = task.result?.user
+                    handleNavigation()
+                    //replaceFragment(R.id.onBoardingFormFrag,null)
+                    //val user = task.result?.user
                 } else {
                     hideLoading()
                     // Sign in failed, display a message and update the UI

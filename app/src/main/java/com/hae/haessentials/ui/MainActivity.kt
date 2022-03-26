@@ -28,11 +28,15 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.hae.haessentials.R
 import com.hae.haessentials.base.BaseActivity
 import com.hae.haessentials.databinding.ActivityMainBinding
+import com.hae.haessentials.utility.CheckNumberNull
 import com.hae.haessentials.utility.FirebaseDataLinker
+import com.hae.haessentials.utility.FirebaseDataLinker.USER_DETAIL
 import com.hae.haessentials.utility.UserSharedPref
+import com.hae.haessentials.utility.checkNullString
 import com.hae.haessentials.viewmodels.MainViewModel
 
 class MainActivity : BaseActivity(), View.OnClickListener {
@@ -48,6 +52,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
     lateinit var viewModel: MainViewModel
+    private var userExist: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,33 +68,48 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         handleNavigation()
     }
 
-    private fun handleNavigation() {
+     fun handleNavigation() {
         if(!UserSharedPref.isLoggedIn()){
             replaceFragment(R.id.login,null)
         }
-        else if(UserSharedPref.getFirstName().isNullOrEmpty()){
-            replaceFragment(R.id.onBoardingFormFrag,null)
+        else if(!UserSharedPref.getFirstName().isNullOrEmpty()){
+            userExist = true
+            binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
+            binding.btNavHome.setTextColor(ContextCompat.getColor(this@MainActivity,R.color.green_186049))
+            replaceFragment(R.id.homeFragment,null)
         }
         else {
-           /* val databse = Firebase.database("https://ha-essentials-default-rtdb.asia-southeast1.firebasedatabase.app")
-            val pincodes = databse.getReference("pincodes")
-            pincodes.addValueEventListener(object : ValueEventListener{
+            val database = Firebase.database(FirebaseDataLinker.FIREBASE_DB).reference
+            val users = database.child(USER_DETAIL)
+            if(!CheckNumberNull(UserSharedPref.getUserUniqueId())){
+                logout()
+                return
+            }
+            users.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val value = snapshot.getValue<Any>()
-                    Log.d("firebase value", "Value is: $value")
+                    if(snapshot.exists()){
+                        for(i in snapshot.children){
+                            if(i.child(UserSharedPref.getUserUniqueId().toString()).exists()){
+                                userExist = true
+                                binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
+                                binding.btNavHome.setTextColor(ContextCompat.getColor(this@MainActivity,R.color.green_186049))
+                                replaceFragment(R.id.homeFragment,null)
+                                break
+                            }
+                        }
+                        if(!userExist){
+                            replaceFragment(R.id.onBoardingFormFrag,null)
+                        }
+                    }else {
+                        replaceFragment(R.id.onBoardingFormFrag,null)
+                    }
                 }
-
                 override fun onCancelled(error: DatabaseError) {
                     Log.w("firebaseerror", "Failed to read value.", error.toException())
                 }
 
-            })*/
-            binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
-            binding.btNavHome.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
-            replaceFragment(R.id.homeFragment,null)
-            /*Log.d("-----Firebase", FirebaseDataLinker.getString(FirebaseDataLinker.ENCRYPTION_KEY))
-            Toast.makeText(this, UserSharedPref.getMobileNumber().toString(),Toast.LENGTH_SHORT).show()*/
-            //s
+            })
+
         }
     }
 
@@ -107,7 +127,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 //on back pressed method to close app from fragments from where going back is not needed
     override fun onBackPressed() {
         if(supportFragmentManager.fragments.size>0){
-            val index= supportFragmentManager.fragments.size
+            val index= supportFragmentManager.fragments.size - 1
             if(
                 supportFragmentManager.fragments[index] is BlankFragment ||
                 supportFragmentManager.fragments[index] is OnBoardingFormFrag ||
@@ -170,8 +190,17 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.lbn_user->{
                 binding.viewUser.setBackgroundResource(R.drawable.bg_header_home)
                 binding.btNavUser.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
+                replaceFragment(R.id.accountFragment,null)
             }
         }
+    }
+    fun logout(){
+        UserSharedPref.setMobile(null)
+        UserSharedPref.setUserUniqueId(null)
+        UserSharedPref.setFirstName(null)
+        UserSharedPref.setLogin(false)
+        handleNavigation()
+
     }
 
 

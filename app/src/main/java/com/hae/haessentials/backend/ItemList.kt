@@ -14,9 +14,12 @@ class ItemList {
     var itemDesc:String?= null
 
     @field:Json(name = "itemCount")
-    var itemCount:String?= null
+    var itemCount:Int?= null
 
     @field:Json(name = "itemPrice")
     var itemPrice:String?= null
+
+    @field:Json(name = "itemImage")
+    var itemImage:String?= null
 
 }

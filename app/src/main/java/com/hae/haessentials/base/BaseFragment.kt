@@ -16,8 +16,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.hae.haessentials.ui.MainActivity
 import androidx.core.content.ContextCompat.getSystemService
-
-
+import com.hae.haessentials.utility.UserSharedPref
 
 
 abstract class BaseFragment: Fragment() {
@@ -48,7 +47,7 @@ abstract class BaseFragment: Fragment() {
                 it
             ).get(getViewModelClass())
         } ?:run {
-            ViewModelProvider(this).get(getViewModelClass())
+            ViewModelProvider(this)[getViewModelClass()]
         }
         return binding.root
     }
@@ -85,6 +84,14 @@ abstract class BaseFragment: Fragment() {
     }
     protected fun showBottomBar(boolean: Boolean){
         mainActivity?.showBottomBar(boolean)
+    }
+
+    protected fun handleNavigation(){
+        mainActivity?.handleNavigation()
+    }
+
+    protected fun logout(){
+      mainActivity?.logout()
     }
 
     override fun onResume() {

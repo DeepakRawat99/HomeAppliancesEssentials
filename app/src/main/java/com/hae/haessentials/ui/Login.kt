@@ -1,28 +1,18 @@
 package com.hae.haessentials.ui
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import android.view.KeyEvent
 import android.view.View
-import android.widget.EditText
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.hae.haessentials.R
 import com.hae.haessentials.base.BaseFragment
 import com.hae.haessentials.databinding.LoginFragmentBinding
-import com.hae.haessentials.utility.MOBILE_NUMBER
-import com.hae.haessentials.utility.TOKEN
-import com.hae.haessentials.utility.VERIFICATION_ID
-import com.hae.haessentials.utility.validMobileNumber
+import com.hae.haessentials.utility.*
 import java.lang.Exception
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -82,7 +72,6 @@ class Login : BaseFragment() {
                 if (p0 is FirebaseAuthInvalidCredentialsException) {
                     // Invalid request
                         hideLoading()
-                    Log.d("0-----firebase", p0.toString())
                     showToast("Invalid Request Please Try after Sometime",requireContext())
                 } else if (p0 is FirebaseTooManyRequestsException) {
                     // The SMS quota for the project has been exceeded
@@ -145,9 +134,14 @@ class Login : BaseFragment() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
+
+                    UserSharedPref.setUserUniqueId(auth.currentUser?.uid.toString())
+                    UserSharedPref.setMobile(phoneNumber)
+                    UserSharedPref.setLogin(true)
                     // Sign in success, update UI with the signed-in user's information
-                    replaceFragment(R.id.onBoardingFormFrag,null)
-                    val user = task.result?.user
+                    handleNavigation()
+                //replaceFragment(R.id.onBoardingFormFrag,null)
+                    //val user = task.result?.user
                 } else {
                     // Sign in failed, display a message and update the UI
                         hideLoading()
