@@ -20,6 +20,10 @@ class DialogClass {
         dialog.setCancelable(true)
         val dialogBinding: ConfirmDialogBinding = DataBindingUtil.inflate(dialog.layoutInflater,R.layout.confirm_dialog,null,false)
          dialog.setContentView(dialogBinding.root)
+         dialog.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+         //dialog.window!!.
+         dialog.window!!.setGravity(Gravity.CENTER)
+
          dialogBinding.confirmLayout.visibility = View.GONE
          dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         /*val confirmLayout =  dialog.findViewById<LinearLayout>(R.id.confirm_layout)
