@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "414107917306-c9rhesf2u091pvo8u3mlvqjg2pi37g4p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hae.haessentials",
+            "certificate_hash": "a89646f7105c421e280a81fbc9820d068edfba26"
+          }
+        },
+        {
           "client_id": "414107917306-jvbsie7j40mu5u8mob8khijs5l3qe5ga.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
