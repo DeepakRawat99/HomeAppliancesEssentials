@@ -72,7 +72,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         if(!UserSharedPref.isLoggedIn()){
             replaceFragment(R.id.login,null)
         }
-        else if(!UserSharedPref.getFirstName().isNullOrEmpty()){
+        /*else if(!UserSharedPref.getFirstName().isNullOrEmpty()){
             userExist = true
             binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
             binding.btNavHome.setTextColor(ContextCompat.getColor(this@MainActivity,R.color.green_186049))
@@ -96,10 +96,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                                 binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
                                 binding.btNavHome.setTextColor(ContextCompat.getColor(this@MainActivity,R.color.green_186049))
                                 replaceFragment(R.id.homeFragment,null)
-                             /*   break
-                            }*/
-                        }else/*
-                        if(!userExist)*/{
+                             *//*   break
+                            }*//*
+                        }else*//*
+                        if(!userExist)*//*{
                             replaceFragment(R.id.onBoardingFormFrag,null)
                         }
                     }else {
@@ -112,7 +112,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             })
 
-        }
+        }*/
     }
 
     private fun initViewModelAndBinding() {
