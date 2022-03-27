@@ -48,7 +48,7 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:fontFamily="@font/poppins"
-        tools:text="@string/order_confirmed"/>
+        android:text="@string/order_confirmed"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

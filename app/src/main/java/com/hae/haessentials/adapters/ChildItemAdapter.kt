@@ -1,6 +1,7 @@
 package com.hae.haessentials.adapters
 
 import android.content.Context
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,9 @@ private val item: ArrayList<ItemList>
             holder.itemName.text = item[position].itemName
             holder.itemDesc.text =  item[position].itemDesc
             holder.itemPrice.text = context.getString(R.string.price, item[position].itemPrice)
+            holder.itemMrp.text = context.getString(R.string.price_mrp,item[position].itemMrp)
+            holder.itemMrp.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            holder.itemDisc.text = context.getString(R.string.price_disc,item[position].itemDisc)
             val context: Context = holder.itemImage.context
             val id: Int = context.resources
                 .getIdentifier(item[position].itemImage, "drawable", context.packageName)
@@ -53,4 +57,6 @@ class ChildViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val addToCart: Button = view.findViewById(R.id.il_add_to_cart)
     var itemCount: TextView = view.findViewById(R.id.item_count)
     val itemDesc: TextView = view.findViewById(R.id.item_desc)
+    val itemMrp: TextView = view.findViewById(R.id.item_mrp)
+    val itemDisc: TextView = view.findViewById(R.id.item_disc)
 }

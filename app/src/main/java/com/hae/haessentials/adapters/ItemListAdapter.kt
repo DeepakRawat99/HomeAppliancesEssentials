@@ -1,12 +1,15 @@
 package com.hae.haessentials.adapters
 
 import android.content.Context
+import android.graphics.Paint
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -35,6 +38,10 @@ class ItemListAdapter(
             holder.itemName.text = item[position].itemName
             holder.itemDesc.text =  item[position].itemDesc
             holder.itemPrice.text = context.getString(R.string.price, item[position].itemPrice)
+            holder.itemMrp.text = context.getString(R.string.price_mrp,item[position].itemMrp)
+            holder.itemMrp.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            holder.itemDisc.text = context.getString(R.string.price_disc,item[position].itemDisc)
+            //-<strike>&#8377;%s</strike> (%s\%% off) ,item[position].itemMrp, item[position].itemDisc, item[position].itemDisc
             val context: Context = holder.itemImage.context
             val id: Int = context.resources
                 .getIdentifier(item[position].itemImage, "drawable", context.packageName)
@@ -69,4 +76,6 @@ val itemName: TextView = view.findViewById(R.id.item_name)
     val addToCart: Button = view.findViewById(R.id.il_add_to_cart)
     var itemCount: TextView = view.findViewById(R.id.item_count)
     val itemDesc:TextView = view.findViewById(R.id.item_desc)
+    val itemMrp: TextView = view.findViewById(R.id.item_mrp)
+    val itemDisc: TextView = view.findViewById(R.id.item_disc)
 }

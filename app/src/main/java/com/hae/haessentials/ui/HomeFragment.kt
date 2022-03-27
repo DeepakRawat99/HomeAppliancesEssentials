@@ -88,6 +88,8 @@ class HomeFragment : BaseFragment() {
             cartItem.itemDesc = items.getJSONObject(i).getString("item_desc")
             cartItem.itemPrice = items.getJSONObject(i).getString("item_price")
             cartItem.itemImage = items.getJSONObject(i).getString("item_image")
+            cartItem.itemMrp = items.getJSONObject(i).getString("item_mrp")
+            cartItem.itemDisc = items.getJSONObject(i).getString("item_disc")
             cartItem.itemCount = 1
             arrayList.add(cartItem)
            // cartItemMap = cartItemMap + listOf(cartItems)
@@ -104,6 +106,8 @@ class HomeFragment : BaseFragment() {
                     cartItems.itemDesc = arrayList[position].itemDesc
                     cartItems.itemPrice = arrayList[position].itemPrice
                     cartItems.itemImage = arrayList[position].itemImage
+                    cartItems.itemMrp = arrayList[position].itemMrp
+                    cartItems.itemDisc = arrayList[position].itemDisc
                     cartItems.itemCount = Integer.parseInt(totalItem)//items.getJSONObject(position).getString("item_ID")
 
 

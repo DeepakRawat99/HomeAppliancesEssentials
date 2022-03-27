@@ -29,9 +29,9 @@ class DialogClass {
         /*val confirmLayout =  dialog.findViewById<LinearLayout>(R.id.confirm_layout)
         val cdOk = dialog.findViewById<Button>(R.id.cd_ok)*/
 
-        /*dialogBinding.cdOk.setOnClickListener {
+        dialogBinding.cdOk.setOnClickListener {
             dialog.dismiss()
-        }*/
+        }
 
             dialog.show()
     }

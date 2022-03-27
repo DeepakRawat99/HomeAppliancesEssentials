@@ -137,6 +137,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             super.onBackPressed()
         }
         else->{
+            binding.viewOrder.setBackgroundResource(0)
+            binding.viewCart.setBackgroundResource(0)
+            binding.viewUser.setBackgroundResource(0)
+            //setting other views text color to normal
+            binding.btNavOrder.setTextColor(ContextCompat.getColor(this,R.color.darker_grey_3E3D3D))
+            binding.btNavCart.setTextColor(ContextCompat.getColor(this,R.color.darker_grey_3E3D3D))
+            binding.btNavUser.setTextColor(ContextCompat.getColor(this,R.color.darker_grey_3E3D3D))
             binding.viewHome.setBackgroundResource(R.drawable.bg_header_home)
             binding.btNavHome.setTextColor(ContextCompat.getColor(this,R.color.green_186049))
             replaceFragment(R.id.homeFragment,null)

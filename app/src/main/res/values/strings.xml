@@ -43,7 +43,9 @@
     <string name="enter_item_count">Enter item count:</string>
     <string name="item_desc">Items Description</string>
     <string name="item_name">Item Name</string>
-    <string name="price">price : &#8377;%s</string>
+    <string name="price">price : &#8377;%s </string>
+    <string name="price_mrp">&#8377;%s</string>
+    <string name="price_disc">(%s\%% off)</string>
     <string name="remove">Remove item</string>
     <string name="not_items">Your cart is empty</string>
     <string name="order_id">Order ID : %s</string>

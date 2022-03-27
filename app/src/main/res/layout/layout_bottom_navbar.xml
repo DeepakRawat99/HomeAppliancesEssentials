@@ -40,15 +40,35 @@
                 android:text="@string/item_desc"
                 android:textColor="@color/darker_grey_3E3D3D"
                 android:textSize="15sp" />
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:orientation="horizontal">
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/item_price"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_mrp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/darker_grey_3E3D3D"
+                android:textSize="12sp" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_disc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/darker_grey_3E3D3D"
+        android:textSize="12sp" />
+</LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

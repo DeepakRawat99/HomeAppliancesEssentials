@@ -22,4 +22,9 @@ class ItemList {
     @field:Json(name = "itemImage")
     var itemImage:String?= null
 
+    @field:Json(name = "item_mrp")
+    var itemMrp:String?= null
+
+    @field:Json(name = "item_disc")
+    var itemDisc:String?= null
 }
